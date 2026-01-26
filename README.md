@@ -1,4 +1,4 @@
-# Bloc-App# Bloc Mobile
+Bloc Mobile
 
 A distributed system for tracking bouldering sessions. Mobile app connects to a REST API, sharing data with the Bloc website.
 
