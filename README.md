@@ -5,6 +5,7 @@ A distributed system for tracking bouldering sessions. Mobile app connects to a 
 > **Note:** This project builds upon the Bloc concept from COMP202 Web Technologies. The mobile app and REST API are new implementations for COMP204 Distributed Systems.
 
 ## Architecture
+
 ```
 ┌─────────────────┐         ┌─────────────────┐         ┌─────────────────┐
 │  React Native   │  HTTP   │   REST API      │         │                 │
@@ -16,11 +17,13 @@ A distributed system for tracking bouldering sessions. Mobile app connects to a 
 ## Tech Stack
 
 ### Mobile App (Client)
+
 - **React Native** - Cross-platform mobile framework
 - **Expo** - Development and testing toolkit
 - **React Navigation** - Screen navigation
 
 ### REST API (Server)
+
 - **Node.js** - JavaScript runtime
 - **Express** - Web framework
 - **JWT** - Token-based authentication
@@ -39,6 +42,7 @@ A distributed system for tracking bouldering sessions. Mobile app connects to a 
 **SQLite** - File-based database shared with the existing Bloc website, demonstrating the distributed nature of the system where multiple clients access the same data.
 
 ## Project Structure
+
 ```
 bloc-mobile/
 ├── app/                    # React Native mobile app
@@ -74,6 +78,7 @@ bloc-mobile/
 ## Installation
 
 ### API Server
+
 ```bash
 cd api
 npm install
@@ -82,6 +87,7 @@ node server.js
 ```
 
 ### Mobile App
+
 ```bash
 cd app
 npm install
@@ -93,6 +99,7 @@ Scan the QR code with the Expo Go app on your phone to run.
 ## Environment Variables
 
 ### API (.env)
+
 ```
 PORT=3000
 DATABASE_PATH=./database.db
@@ -101,15 +108,15 @@ JWT_SECRET=your-secret-key-here
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | /api/auth/register | Register new user |
-| POST | /api/auth/login | Login, returns JWT |
-| GET | /api/sessions | Get all public sessions |
-| POST | /api/sessions | Create new session |
-| GET | /api/sessions/:id | Get session details |
-| PUT | /api/sessions/:id/end | End a session |
-| POST | /api/sessions/:id/climbs | Add climb to session |
+| Method | Endpoint                 | Description             |
+| ------ | ------------------------ | ----------------------- |
+| POST   | /api/auth/register       | Register new user       |
+| POST   | /api/auth/login          | Login, returns JWT      |
+| GET    | /api/sessions            | Get all public sessions |
+| POST   | /api/sessions            | Create new session      |
+| GET    | /api/sessions/:id        | Get session details     |
+| PUT    | /api/sessions/:id/end    | End a session           |
+| POST   | /api/sessions/:id/climbs | Add climb to session    |
 
 ## Author
 
