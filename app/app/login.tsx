@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
+import { router } from 'expo-router';
+import { api } from './app';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
@@ -38,7 +40,10 @@ export default function LoginScreen() {
         <Text style={styles.buttonText}>Login</Text>
       </Pressable>
 
-      <Pressable style={styles.linkButton}>
+      <Pressable
+        style={styles.linkButton}
+        onPress={() => router.push('/register')}
+      >
         <Text style={styles.linkText}>Don't have an account? Register</Text>
       </Pressable>
     </View>
