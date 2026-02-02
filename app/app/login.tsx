@@ -1,15 +1,21 @@
 import { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native';
 import { router } from 'expo-router';
-import { api } from './app';
+import { api } from '../services/api';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     console.log('Login attempt:', email, password);
-    // TODO: Connect to API
+    const result = await api.login(email, password);
+
+    if (result.error) {
+      alert(result.error);
+    } else {
+      alert('Welcome ' + result.user.username);
+    }
   };
 
   return (
